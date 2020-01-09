@@ -9,8 +9,8 @@
 <br>
 ```TELEGRAM_ACCESS_TOKEN``` - токен от ```telegram```, как получить, смотрите по <a href='https://romua1d.ru/kak-poluchit-token-bota-telegram-api/'>ссылке</a>.
 <br>
-```TELEGRAM_CHAT_ID``` - имя вашего бота в ```telegram```. Его можно посмотреть во вкладке```Chanel info```,
-выглядит так: ```@test```.
+```TELEGRAM_CHAT_ID``` - имя вашего бота в ```telegram```. <br>
+Его можно посмотреть во вкладке```Chanel info```,выглядит так: ```@test```.
 
 ## Инструкция по запуску  
 
