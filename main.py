@@ -35,7 +35,6 @@ def main():
                     lesson_url=lesson_url
                 )
                 bot.send_message(chat_id=telegram_chat_id, text=text_message)
-                continue
             else:
                 params['timestamp'] = response_devman['timestamp_to_request']
 
