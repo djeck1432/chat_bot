@@ -7,9 +7,13 @@
 
 ```DEVMAN_ACCESS_TOKEN``` - токен, от сайта <a href='https://dvmn.org/'>Devman</a>, его можно получить по этой <a href='https://dvmn.org/api/docs/'>ссылке</a>.
 <br>
-```TELEGRAM_ACCESS_TOKEN``` - токен от ```telegram```, как получить, смотрите по <a href='https://romua1d.ru/kak-poluchit-token-bota-telegram-api/'>ссылке</a>.
+
+```TELEGRAM_ACCESS_TOKEN``` - токен от ```telegram```, как получить, смотрите по <a href='https://romua1d.ru/kak-poluchit-token-bota-telegram-api/'>ссылке</a>.<br>
+```TELEGRAM_LOG_BOT_TOKEN``` - токен от бота, который будет отправлять вам логи.
+
 <br>
 ```TELEGRAM_CHAT_ID``` - имя вашего бота в ```telegram```. <br>
+```TELEGRAM_LOG_BOT_CHAT_ID``` - имя вашего бота, куда будут приходить ```log``` программы.<br>
 Его можно посмотреть во вкладке```Chanel info```, выглядит так: ```@test```.
 
 ## Инструкция по запуску  
