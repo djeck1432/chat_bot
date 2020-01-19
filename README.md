@@ -8,17 +8,30 @@
 ```DEVMAN_ACCESS_TOKEN``` - токен, от сайта <a href='https://dvmn.org/'>Devman</a>, его можно получить по этой <a href='https://dvmn.org/api/docs/'>ссылке</a>.
 <br>
 
-```TELEGRAM_ACCESS_TOKEN``` - токен от ```telegram```, как получить, смотрите по <a href='https://romua1d.ru/kak-poluchit-token-bota-telegram-api/'>ссылке</a>.
+```TELEGRAM_ACCESS_TOKEN``` - токен от ```telegram```, как получить, смотрите по <a href='https://romua1d.ru/kak-poluchit-token-bota-telegram-api/'>ссылке</a>. <br>
 ```TELEGRAM_LOG_BOT_TOKEN``` - токен от бота, который будет отправлять вам логи.
 </br>
 
 ```TELEGRAM_CHAT_ID``` - имя вашего бота в ```telegram```. <br>
-```TELEGRAM_LOG_BOT_CHAT_ID``` - имя вашего бота, куда будут приходить ```log``` программы.<br>
+```TELEGRAM_LOG_BOT_CHAT_ID``` - имя вашего бота, куда будут приходить ```loggs``` программы.<br>
 Его можно посмотреть во вкладке```Chanel info```, выглядит так: ```@test```.
 
-## Инструкция по запуску  
+## Инструкция по запуску на сервере
 
-Откройте у себя на компьютере ```bash``` и в нем пропишите следующие команды: 
+Зарегистрируйтесь  на этом <a href='https://signup.heroku.com/dc'>сайте</a>.
+<br>
+Для работы через терминал, установите ```CLI``` для ```Heroku```, для этого
+откройте у себя на компьютере ```bash``` и в нем пропишите следующие команды: 
+<br>
+Для ```Linux``` - ```sudo snap install heroku --classic```;
+<br>
+Для ```MacOs``` - ```brew install heroku/brew/heroku```;
+<br>
+Оставаясь в терминал, зайдите через ```bash``` в ваш аккаунт на ```Heroku```:
+<br>
+```heroku login```
+<br>
+Загрузите с ```github``` ваш репозиторий на компьютер: 
 <br>
 ```git clone https://github.com/djeck1432/chat_bot.git```
 <br>
@@ -26,12 +39,23 @@
 <br>
 ```cd chat_bot ```
 <br>
-Установиту необходимые библиотеки и модули:
+Создайте приложения в ```Heroku``` :
 <br>
-```pip install -r requirements.txt```
+```heroku create```
 <br>
-Запустите код: 
+Загрузите ваш репозиторий на сервер ```Heroku```:
 <br>
-```python main.py ```
+```git push heroku master```
 <br>
-Готово, ваш сервер запущен и как только преподаватель проверит вашу работу, вам прийдут уведомления об этом. 
+Перейдите по <a href='https://dashboard.heroku.com/apps'>ссылке</a>, выберете свое приложения и откройте его
+<br>
+В меню навигации, перейдите на вкладку ```Settings```.
+<br>
+В разделе ```Config vars ``` , передайте ваши переменные окружения.
+<br>
+В терминале, выполните следующую команду для запуска кода на сервере:
+```heroku ps:scale bot=1```
+<br>
+Поздравляю, теперь ваш бот работой постоянно, вне зависимости, включен ваш компьютер или нет.
+
+
