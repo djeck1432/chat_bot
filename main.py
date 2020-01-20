@@ -64,7 +64,7 @@ def main():
     bot = telegram.Bot(token=telegram_access_token)
     bot_log = MyLogsHandler(telegram_log_access_token, telegram_log_chat_id)
 
-    logger = logging.getLogger("Девман бот")
+    logger = logging.getLogger("DevmanBot")
     logger.setLevel(logging.INFO)
     logger.addHandler(bot_log)
 
