@@ -17,7 +17,7 @@ class MyLogsHandler(logging.Handler):
         return self.bot_log.send_message(chat_id=self.telegram_log_chat_id, text=log_entry)
 
 
-def get_response_devman(devman_access_token, params):
+def get_devman_response(devman_access_token, params):
     url = 'https://dvmn.org/api/long_polling/'
     headers = {'Authorization': 'Token ' + devman_access_token}
     response = requests.get(url, params=params, headers=headers)
@@ -29,7 +29,7 @@ def start_bot(devman_access_token, bot, telegram_chat_id):
     while True:
         params = {'timestamp': ''}
         try:
-            response_devman = get_response_devman(devman_access_token, params)
+            response_devman = get_devman_response(devman_access_token, params)
             if response_devman['status'] == 'found':
                 if response_devman['new_attempts']:
                     result = 'К сожалению, в работе нашлись ошибки.'
@@ -64,7 +64,7 @@ def main():
     bot = telegram.Bot(token=telegram_access_token)
     bot_log = MyLogsHandler(telegram_log_access_token, telegram_log_chat_id)
 
-    logger = logging.getLogger("Название логера")
+    logger = logging.getLogger("Девман бот")
     logger.setLevel(logging.INFO)
     logger.addHandler(bot_log)
 
